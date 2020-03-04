@@ -1,2 +1,2 @@
-Angular app
+Angular app,
 developed 4 demo skills
