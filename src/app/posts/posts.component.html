@@ -1,10 +1,18 @@
+<div class="container-fluid" style="margin-top: 5px;">
+  <div>
+    <button type="button" class="btn btn-primary" style="margin-left: 5px; margin-top: 5px;">Add post</button>
+  </div>
+</div>
+<hr>
 <div class="row">
   <div class="col-sm-6" *ngFor="let post of postsService.posts">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{post.title}}</h5>
         <p class="card-text">{{post.text}}</p>
-        <a href="#" class="btn btn-primary">More detail</a>
+        <a [routerLink]="['/posts',post.id]"
+         class="btn btn-secondary">More detail</a>
+         <button class="btn btn-danger" style="margin-left: 5px;">Delete</button>
       </div>
     </div>
   </div>
