@@ -2,12 +2,14 @@
   <h1 class="display-4">Welcome to my angular app</h1>
   <hr>
   <div>
-    <p>Last 3 update:</p>
-    <ul class="list-group">
-      <li class="list-group-item active">item</li>
-      <li class="list-group-item">item</li>
-      <li class="list-group-item ">item</li>
+<!--    <button (click)="getCommit()">Fetch</button>-->
+    <p>Last updates:</p>
+    <ul class="list-group" *ngFor="let commit of info" style="margin-bottom: 5px">
+        <li class="list-group-item list-group-item-dark" >Author: {{commit.commit.committer.name}}</li>
+        <li class="list-group-item">Commit: {{commit.commit.message}}</li>
+        <li class="list-group-item">SHA: {{commit.sha}}</li>
     </ul>
 
   </div>
 </div>
+

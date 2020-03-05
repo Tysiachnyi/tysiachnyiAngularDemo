@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GithubService} from '../services/github.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-main',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  info;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+      // this.getService.fetchTodos('https://api.github.com/repos/Tysiachnyi/tysiachnyiAngularDemo/commits');
+      // this.info = this.getService.data;
+    this.fetchTodos('https://api.github.com/repos/Tysiachnyi/tysiachnyiAngularDemo/commits');
+  }
+
+  fetchTodos(url) {
+    this.http.get(url)
+        .subscribe(response => {
+          this.info = response;
+          console.log(response);
+        });
   }
 
   // #TODO 1 add fetch to github repo to commit
