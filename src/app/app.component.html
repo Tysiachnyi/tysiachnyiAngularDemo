@@ -1,21 +1,19 @@
 <div class="header">
   <ul class="nav justify-content-center">
       <li class="nav-item">
-          <a class="nav-link" href="#"><h2>Main</h2></a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/']" [routerLinkActiveOptions]="{exact: true}"><h2>Main</h2></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#"><h2>Posts</h2></a>
+          <a class="nav-link" routerLinkActive="active" routerLink="/posts"><h2>Posts</h2></a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" href="#"><h2>About</h2></a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/about']"><h2>About</h2></a>
       </li>
   </ul>
 </div>
-
-
-<app-main></app-main>
-
-
+<div>
+<router-outlet></router-outlet>
+</div>
 <footer class="footer">
   <div class="container">
     <span class="text-muted">Developed and further updated by Nikita Tysiachnyi.

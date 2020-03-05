@@ -1,1 +1,11 @@
-<p>posts works!</p>
+<div class="row">
+  <div class="col-sm-6" *ngFor="let post of postsService.posts">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.text}}</p>
+        <a href="#" class="btn btn-primary">More detail</a>
+      </div>
+    </div>
+  </div>
+</div>
