@@ -1,6 +1,25 @@
 <div class="container-fluid" style="margin-top: 5px;">
   <div>
-    <button type="button" class="btn btn-primary" style="margin-left: 5px; margin-top: 5px;">Add post</button>
+    <button
+            type="button"
+            class="btn btn-primary"
+            style="margin-left: 5px; margin-top: 5px;"
+            (click)="addInput()"
+    >{{inputValue}}
+    </button>
+    <div style="margin-top: 10px" *ngIf="addPostValue">
+      <div class="form-group">
+        <input type="text" style="margin-top: 5px"
+               class="form-control" name=""   placeholder="Write title">
+        <br>
+        <textarea style="margin-top: 5px; margin-bottom: 5px"
+                  placeholder="Write post text"
+                  class="form-control" rows="3" id="comment"></textarea>
+        <div class="text-center">
+        <button type="button" class="btn btn-success" (click)="addPost()">Add post</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <hr>
