@@ -7,19 +7,43 @@
             (click)="addInput()"
     >{{inputValue}}
     </button>
+    <form [formGroup]="form" (ngSubmit)="submit()">
     <div style="margin-top: 10px" *ngIf="addPostValue">
       <div class="form-group">
-        <input type="text" style="margin-top: 5px"
-               class="form-control" name=""   placeholder="Write title">
+        <input type="text" style="margin-top: 5px" class="form-control"
+               formControlName="title"   placeholder="Write title" >
+        <div *ngIf="form.get('title').invalid && form.get('title').touched"
+                class="validation">
+          <small *ngIf="form.get('title').errors.required" style="color: red">
+            Поле Title не может быть пустым
+          </small>
+        </div>
         <br>
         <textarea style="margin-top: 5px; margin-bottom: 5px"
-                  placeholder="Write post text"
-                  class="form-control" rows="3" id="comment"></textarea>
+                  placeholder="Write post text" class="form-control"
+                  rows="3" formControlName="text">
+        </textarea>
+        <div
+                *ngIf="form.get('text').invalid && form.get('text').touched"
+                class="validation"
+        >
+          <small *ngIf="form.get('text').errors.required" style="color: red">
+            Пост не может быть пустым
+          </small>
+
+          <small *ngIf="form.get('text').errors.minlength" style="color: red">
+            Длинна должна быть не менее {{form.get('text').errors.minlength.requiredLength}}.
+            В данный момент длина {{form.get('text').errors.minlength.actualLength}}
+          </small>
+        </div>
         <div class="text-center">
-        <button type="button" class="btn btn-success" (click)="addPost()">Add post</button>
+        <button type="submit" [disabled]="form.invalid"
+                class="btn btn-success">Add post
+        </button>
         </div>
       </div>
     </div>
+    </form>
   </div>
 </div>
 <hr>
