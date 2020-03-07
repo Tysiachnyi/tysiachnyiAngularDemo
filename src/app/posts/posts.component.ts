@@ -47,4 +47,8 @@ export class PostsComponent implements OnInit {
     this.addPostValue = !this.addPostValue;
     this.inputValue = this.addPostValue ? 'Hide input' : 'Show input';
     }
+
+  deletePost(id: number) {
+    this.postsService.posts = this.postsService.posts.filter(d => d.id !== id);
+  }
 }
