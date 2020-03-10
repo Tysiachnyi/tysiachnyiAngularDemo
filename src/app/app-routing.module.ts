@@ -5,12 +5,15 @@ import {AboutComponent} from './about/about.component';
 import {PostsComponent} from './posts/posts.component';
 import {PostComponent} from './post/post.component';
 import {ErrorComponent} from './error/error.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
+import {AuthGuard} from './guard/auth.guard';
 
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'posts', component: PostsComponent},
   {path: 'posts/:id', component: PostComponent},
   {path: 'about', component: AboutComponent},
+  {path: 'user', component: UserProfileComponent, canActivate: [AuthGuard]},
   {path: '**', component: ErrorComponent}
 ]
 

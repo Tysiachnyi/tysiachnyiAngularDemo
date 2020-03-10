@@ -1,0 +1,14 @@
+<div>
+    <div class="card">
+      <div class="card-header">
+        User information
+      </div>
+      <div class="card-body">
+          <h4 class="card-title">User Name</h4>
+          <p class="card-text">Your country: {{auth.country + ' ' + auth.countryFlag}}</p>
+          <p class="card-text">Your ip: {{auth.ip}}</p>
+          <p class="card-text">You logged in: {{auth.loggedDate | date:'short'}}</p>
+          <a href="#" [routerLink]="'/'" class="btn btn-primary">Back</a>
+      </div>
+    </div>
+</div>

@@ -12,6 +12,7 @@ export class PostsComponent implements OnInit {
   addPostValue: boolean;
   inputValue: string;
   id: number;
+  modal: boolean;
 
   constructor(
     public postsService: PostsService,
@@ -51,4 +52,5 @@ export class PostsComponent implements OnInit {
   deletePost(id: number) {
     this.postsService.posts = this.postsService.posts.filter(d => d.id !== id);
   }
+
 }

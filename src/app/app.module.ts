@@ -10,6 +10,7 @@ import { ErrorComponent } from './error/error.component';
 import { PostComponent } from './post/post.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {HttpClientModule} from '@angular/common/http';
     MainComponent,
     AboutComponent,
     ErrorComponent,
-    PostComponent
+    PostComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -22,9 +22,6 @@ export class MainComponent implements OnInit {
     this.http.get(url)
         .subscribe(response => {
           this.info = response;
-          console.log(response);
         });
   }
-
-  // #TODO 1 add fetch to github repo to commit
 }

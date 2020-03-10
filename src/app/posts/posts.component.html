@@ -55,8 +55,10 @@
         <p class="card-text">{{post.text}}</p>
         <a [routerLink]="['/posts',post.id]"
          class="btn btn-secondary">More detail</a>
-         <button class="btn btn-danger" style="margin-left: 5px;" (click)="deletePost(post.id)">Delete</button>
+         <button class="btn btn-danger"
+                 style="margin-left: 5px;" (click)="deletePost(post.id)">Delete</button>
       </div>
     </div>
   </div>
 </div>
+
