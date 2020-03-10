@@ -1,5 +1,5 @@
 <div class="container-fluid" style="margin-top: 5px;">
-  <div>
+  <div *ngIf="auth.isAuth">
     <button
             type="button"
             class="btn btn-primary"
@@ -44,9 +44,10 @@
       </div>
     </div>
     </form>
+    <hr>
   </div>
+
 </div>
-<hr>
 <div class="row">
   <div class="col-sm-6" *ngFor="let post of postsService.posts">
     <div class="card">
@@ -55,7 +56,7 @@
         <p class="card-text">{{post.text}}</p>
         <a [routerLink]="['/posts',post.id]"
          class="btn btn-secondary">More detail</a>
-         <button class="btn btn-danger"
+         <button class="btn btn-danger" *ngIf="auth.isAuth"
                  style="margin-left: 5px;" (click)="deletePost(post.id)">Delete</button>
       </div>
     </div>

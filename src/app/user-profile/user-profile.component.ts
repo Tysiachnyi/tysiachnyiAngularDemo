@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
+import {PostsService} from '../data/posts.service';
+import {PostsComponent} from '../posts/posts.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -8,7 +10,8 @@ import {AuthService} from '../services/auth.service';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService,
+              public postsService: PostsService) {}
 
   ngOnInit(): void {
   }

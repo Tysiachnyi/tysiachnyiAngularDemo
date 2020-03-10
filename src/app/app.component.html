@@ -22,12 +22,12 @@
           </a>
       </li>
       <li class="nav-item" *ngIf="!auth.isAuth">
-          <button class="btn btn-light" (click)="auth.login()">
+          <button class="btn btn_log" (click)="auth.login()">
               <h2>Login</h2>
           </button>
       </li>
       <li class="nav-item" *ngIf="auth.isAuth">
-          <button class="btn btn-light" (click)="auth.logout()">
+          <button class="btn btn_log" (click)="auth.logout()">
               <h2>Logout</h2>
           </button>
       </li>

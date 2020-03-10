@@ -8,6 +8,7 @@
           <p class="card-text">Your country: {{auth.country + ' ' + auth.countryFlag}}</p>
           <p class="card-text">Your ip: {{auth.ip}}</p>
           <p class="card-text">You logged in: {{auth.loggedDate | date:'short'}}</p>
+          <p class="card-text">Count of posts: {{postsService.posts.length}}</p>
           <a href="#" [routerLink]="'/'" class="btn btn-primary">Back</a>
       </div>
     </div>

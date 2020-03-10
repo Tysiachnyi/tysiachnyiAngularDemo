@@ -36,3 +36,11 @@
 .active {
   color: black;
 }
+
+.btn_log {
+  color: #007bff;
+}
+
+.btn_log:hover {
+  color: #0056b3;
+}

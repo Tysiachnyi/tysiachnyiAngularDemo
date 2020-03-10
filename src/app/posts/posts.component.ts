@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '../data/posts.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-posts',
@@ -13,9 +14,11 @@ export class PostsComponent implements OnInit {
   inputValue: string;
   id: number;
   modal: boolean;
+  newPost: number;
 
   constructor(
     public postsService: PostsService,
+    public auth: AuthService
   ) { }
 
   ngOnInit(): void {
