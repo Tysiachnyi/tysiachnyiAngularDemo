@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../data/posts.service';
+import {Post, PostsService} from '../services/posts.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../services/auth.service';
 
@@ -15,6 +15,7 @@ export class PostsComponent implements OnInit {
   id: number;
   modal: boolean;
   newPost: number;
+  helper: Post[];
 
   constructor(
     public postsService: PostsService,
@@ -56,4 +57,10 @@ export class PostsComponent implements OnInit {
     this.postsService.posts = this.postsService.posts.filter(d => d.id !== id);
   }
 
+  likePost(id: number) {
+    this.postsService.likedPosts = this.postsService.likedPosts
+        .concat(this.postsService.posts.find(d => d.id === id));
+    console.log(this.postsService.likedPosts);
+
+  }
 }

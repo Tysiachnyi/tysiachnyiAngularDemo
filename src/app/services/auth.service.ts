@@ -24,12 +24,10 @@ export class AuthService {
             this.loggedDate = new Date();
             this.http.get(this.ipApi).subscribe((response: any) => {
                 this.ip = response.ip;
-                console.log(`http://api.ipstack.com/${this.ip}?access_key=${this.ACCESS_KEY}&format=1`);
                 this.http.get(
                     `http://api.ipstack.com/${this.ip}?access_key=${this.ACCESS_KEY}&format=1`)
                     // tslint:disable-next-line:no-shadowed-variable
                     .subscribe((response: any) => {
-                        console.log(response);
                         this.country = response.country_name;
                         this.countryFlag = response.location.country_flag_emoji;
                     });

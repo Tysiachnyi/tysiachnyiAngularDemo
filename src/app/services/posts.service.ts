@@ -15,6 +15,8 @@ export class PostsService {
     {title: 'Users need more privacy', text: 'Sample text for post 4', id: 44}
   ];
 
+  likedPosts: Post[] = [];
+
   getById(id: number) {
     return this.posts.find(p => p.id === id);
   }
