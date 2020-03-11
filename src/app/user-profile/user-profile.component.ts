@@ -16,4 +16,7 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  // TODO 2 add liked posts
+
 }

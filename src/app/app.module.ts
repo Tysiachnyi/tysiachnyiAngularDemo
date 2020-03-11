@@ -11,6 +11,7 @@ import { PostComponent } from './post/post.component';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     AboutComponent,
     ErrorComponent,
     PostComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
