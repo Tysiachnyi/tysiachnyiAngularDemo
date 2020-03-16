@@ -60,10 +60,15 @@
          <button class="btn btn-danger" style="margin-left: 5px;"
                  *ngIf="auth.isAuth" (click)="deletePost(post.id)">Delete
          </button>
-        <button class="btn btn-success" style="margin-left: 5px;"
-                *ngIf="auth.isAuth" (click)="likePost(post.id)">
-          <i class="fa fa-thumbs-up">Like</i>
+        <button class="btn btn-info" style="margin-left: 5px;"
+                *ngIf="auth.isAuth && !post.liked" (click)="likePost(post.id)">
+          <i class="fa fa-thumbs-up"> Like</i>
         </button>
+        <button class="btn btn-success" style="margin-left: 5px;"
+                *ngIf="auth.isAuth && post.liked" (click)="disLikePost(post.id)">
+          <i class="fa fa-heart"></i>
+        </button>
+
       </div>
     </div>
   </div>

@@ -16,6 +16,7 @@ export class PostsComponent implements OnInit {
   modal: boolean;
   newPost: number;
   helper: Post[];
+  likedPost;
 
   constructor(
     public postsService: PostsService,
@@ -58,9 +59,28 @@ export class PostsComponent implements OnInit {
   }
 
   likePost(id: number) {
-    this.postsService.likedPosts = this.postsService.likedPosts
-        .concat(this.postsService.posts.find(d => d.id === id));
-    console.log(this.postsService.likedPosts);
+    // const found = this.postsService.likedPosts.some(el => el.id === id);
+    // if (!found) {
+    //   this.postsService.likedPosts = this.postsService.likedPosts
+    //       .concat(this.postsService.posts
+    //           .find(d => d.id === id));
+    //   this.likedPost = this.postsService.posts.find(el => el.id === id);
+    //   this.likedPost.liked = true;
+    //   console.log(this.postsService.likedPosts);
+    // }
+    this.postsService.like(id);
+  }
 
+  disLikePost(id: number) {
+    // const found = this.postsService.likedPosts.some(el => el.id === id);
+    // if (found) {
+    //   console.log(this.postsService.likedPosts);
+    //   this.postsService.likedPosts = this.postsService.likedPosts
+    //       .filter(d => d.id !== id);
+    //   console.log(this.postsService.likedPosts);
+    //   this.likedPost = this.postsService.posts.find(el => el.id === id);
+    //   this.likedPost.liked = false;
+    // }
+    this.postsService.dislike(id);
   }
 }
