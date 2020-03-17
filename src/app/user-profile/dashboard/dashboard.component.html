@@ -1,0 +1,19 @@
+<div>
+    <h4>List of liked post</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>ID</th>
+            <th>Link</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let likedPost of postsService.likedPosts">
+            <td scope="row">{{likedPost.title}}</td>
+            <td>{{likedPost.id}}</td>
+            <td><a [routerLink]="['/posts',likedPost.id]">Post link</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

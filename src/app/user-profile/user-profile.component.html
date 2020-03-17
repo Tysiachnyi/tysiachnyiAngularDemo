@@ -9,25 +9,35 @@
           <p class="card-text">Your ip: {{auth.ip}}</p>
           <p class="card-text">You logged in: {{auth.loggedDate | date:'short'}}</p>
           <p class="card-text">Count of posts: {{postsService.posts.length}}</p>
-          <div *ngIf="postsService.likedPosts.length > 0">
-              <h4>List of liked post</h4>
-              <table class="table">
-                  <thead>
-                  <tr>
-                      <th>Title</th>
-                      <th>ID</th>
-                      <th>Link</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr *ngFor="let likedPost of postsService.likedPosts">
-                      <td scope="row">{{likedPost.title}}</td>
-                      <td>{{likedPost.id}}</td>
-                      <td><a [routerLink]="['/posts',likedPost.id]">Post link</a></td>
-                  </tr>
-                  </tbody>
-              </table>
-          </div>
+          <a [routerLink]="'dashboard'" *ngIf="postsService.likedPosts.length > 0">
+              <button class="btn btn-primary" >
+                  load liked posts
+              </button>
+          </a>
+
       </div>
     </div>
+
+    <router-outlet></router-outlet>
 </div>
+
+
+<!--<div *ngIf="postsService.likedPosts.length > 0">-->
+<!--    <h4>List of liked post</h4>-->
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>Title</th>-->
+<!--            <th>ID</th>-->
+<!--            <th>Link</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr *ngFor="let likedPost of postsService.likedPosts">-->
+<!--            <td scope="row">{{likedPost.title}}</td>-->
+<!--            <td>{{likedPost.id}}</td>-->
+<!--            <td><a [routerLink]="['/posts',likedPost.id]">Post link</a></td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--</div>-->

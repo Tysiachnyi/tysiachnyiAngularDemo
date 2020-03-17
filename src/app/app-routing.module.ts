@@ -7,13 +7,16 @@ import {PostComponent} from './post/post.component';
 import {ErrorComponent} from './error/error.component';
 import {UserProfileComponent} from './user-profile/user-profile.component';
 import {AuthGuard} from './guard/auth.guard';
+import {DashboardComponent} from './user-profile/dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path: '', component: MainComponent},
+  {path: '', component: MainComponent, pathMatch: 'full'},
   {path: 'posts', component: PostsComponent},
   {path: 'posts/:id', component: PostComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'user', component: UserProfileComponent, canActivate: [AuthGuard]},
+  {path: 'user', component: UserProfileComponent, canActivate: [AuthGuard], children: [{
+      path: 'dashboard', component: DashboardComponent}
+    ]},
   {path: '**', component: ErrorComponent}
 ]
 
